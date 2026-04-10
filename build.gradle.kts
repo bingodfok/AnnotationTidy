@@ -15,10 +15,7 @@ repositories {
 
 dependencies {
     intellijPlatform {
-        create(
-            providers.gradleProperty("platformType"),
-            providers.gradleProperty("platformVersion"),
-        )
+        intellijIdeaCommunity(providers.gradleProperty("platformVersion"))
         bundledPlugin("com.intellij.java")
         testFramework(org.jetbrains.intellij.platform.gradle.TestFrameworkType.Platform)
     }
@@ -34,7 +31,7 @@ tasks {
     }
 
     patchPluginXml {
-        sinceBuild = "253"
+        sinceBuild = "252"
         untilBuild = provider { null }
     }
 

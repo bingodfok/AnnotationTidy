@@ -7,7 +7,6 @@ import com.intellij.psi.PsiAnnotation
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiElement
-import com.intellij.psi.PsiField
 import com.intellij.psi.PsiJavaFile
 import com.intellij.psi.PsiMethod
 import com.intellij.psi.PsiModifier
@@ -33,15 +32,6 @@ object AnnotationLayoutService {
         PsiModifier.DEFAULT,
         PsiModifier.SEALED,
         PsiModifier.NON_SEALED,
-    )
-
-    private val groupedAnnotations = listOf(
-        0 to setOf("Override", "Deprecated", "SafeVarargs", "FunctionalInterface"),
-        1 to setOf("NotNull", "Nullable", "NonNull", "CheckForNull", "Contract", "Range"),
-        2 to setOf("Valid", "NotBlank", "NotEmpty", "Size", "Min", "Max", "Pattern"),
-        3 to setOf("Inject", "Autowired", "Resource", "Qualifier", "Value"),
-        4 to setOf("RequestMapping", "GetMapping", "PostMapping", "PutMapping", "DeleteMapping", "PatchMapping"),
-        5 to setOf("Entity", "Table", "Id", "GeneratedValue", "Column", "Enumerated"),
     )
 
     fun tidyJavaFile(file: PsiJavaFile): Int {
@@ -86,7 +76,7 @@ object AnnotationLayoutService {
 
         val indent = lineIndent(document, firstAnnotation.textRange.startOffset)
         val sortedAnnotations = annotations
-            .sortedWith(compareBy<PsiAnnotation>({ annotationPriority(it) }, { annotationName(it) }, { it.text }))
+            .sortedWith(compareBy<PsiAnnotation>({ annotationLength(it) }, { annotationName(it) }, { it.text }))
             .map { it.text.trim() }
 
         val modifiersText = modifierOrder
@@ -134,17 +124,16 @@ object AnnotationLayoutService {
         return text.subSequence(lineStart, cursor).toString()
     }
 
-    private fun annotationPriority(annotation: PsiAnnotation): Int {
-        val shortName = annotationName(annotation)
-        return groupedAnnotations.firstOrNull { (_, names) -> shortName in names }?.first ?: 99
-    }
-
     private fun annotationName(annotation: PsiAnnotation): String {
         return annotation.qualifiedName?.substringAfterLast('.') ?: annotation.nameReferenceElement?.referenceName ?: annotation.text
     }
 
+    private fun annotationLength(annotation: PsiAnnotation): Int {
+        return annotation.text.trim().length
+    }
+
     private fun supportsTidying(owner: PsiModifierListOwner): Boolean {
-        return owner is PsiClass || owner is PsiMethod || owner is PsiField
+        return owner is PsiClass || owner is PsiMethod
     }
 }
 

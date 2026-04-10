@@ -8,10 +8,8 @@ class AnnotationLayoutServiceTest : BasePlatformTestCase() {
         val file = myFixture.configureByText(
             "Demo.java",
             """
-            import org.jetbrains.annotations.NotNull;
-
             class Demo {
-                @Deprecated @NotNull @Override public String value() {
+                @SuppressWarnings("unchecked") @Deprecated @Override public String value() {
                     return "";
                 }
             }
@@ -23,12 +21,10 @@ class AnnotationLayoutServiceTest : BasePlatformTestCase() {
         assertEquals(1, changed)
         myFixture.checkResult(
             """
-            import org.jetbrains.annotations.NotNull;
-
             class Demo {
                 @Override
                 @Deprecated
-                @NotNull
+                @SuppressWarnings("unchecked")
                 public String value() {
                     return "";
                 }
