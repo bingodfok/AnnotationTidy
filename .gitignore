@@ -1,0 +1,17 @@
+# Gradle
+.gradle/
+.gradle-bin/
+build/
+
+# IntelliJ IDEA / JetBrains
+.idea/
+*.iml
+out/
+
+# IntelliJ Platform plugin caches
+.intellijPlatform/
+.kotlin/
+
+# OS files
+.DS_Store
+Thumbs.db
