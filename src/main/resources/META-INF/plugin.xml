@@ -1,0 +1,36 @@
+<idea-plugin>
+    <id>com.bingo.annotationtidy</id>
+    <name>Annotation Tidy</name>
+    <vendor email="dev@example.com">Bingo</vendor>
+
+    <description><![CDATA[
+        <p>Keep Java annotation blocks tidy and predictable.</p>
+        <ul>
+            <li>Sort annotations by common semantic groups</li>
+            <li>Split stacked annotations into standalone lines</li>
+            <li>Preserve a clean modifier order before declarations</li>
+        </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup
+                id="Annotation Tidy"
+                displayType="BALLOON"
+                isLogByDefault="false"/>
+    </extensions>
+
+    <actions>
+        <action
+                id="AnnotationTidy.TidyJavaAnnotationsAction"
+                class="com.bingo.annotationtidy.TidyJavaAnnotationsAction"
+                text="Tidy Java Annotations"
+                description="Reorder and normalize Java annotations in the current file">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt shift A"/>
+        </action>
+    </actions>
+</idea-plugin>
