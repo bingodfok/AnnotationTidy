@@ -7,6 +7,7 @@ import com.intellij.psi.PsiAnnotation
 import com.intellij.psi.PsiClass
 import com.intellij.psi.PsiDocumentManager
 import com.intellij.psi.PsiElement
+import com.intellij.psi.PsiField
 import com.intellij.psi.PsiJavaFile
 import com.intellij.psi.PsiMethod
 import com.intellij.psi.PsiModifier
@@ -133,7 +134,7 @@ object AnnotationLayoutService {
     }
 
     private fun supportsTidying(owner: PsiModifierListOwner): Boolean {
-        return owner is PsiClass || owner is PsiMethod
+        return owner is PsiClass || owner is PsiMethod || owner is PsiField
     }
 }
 

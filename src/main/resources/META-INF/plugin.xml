@@ -4,11 +4,11 @@
     <vendor email="dev@example.com">Bingo</vendor>
 
     <description><![CDATA[
-        <p>Keep Java annotation blocks tidy and predictable.</p>
+        <p>Quickly tidy Java annotations on classes, methods, and fields.</p>
         <ul>
-            <li>Sort annotations by common semantic groups</li>
+            <li>Trigger with a shortcut inside IntelliJ IDEA</li>
+            <li>Sort annotations from shortest to longest</li>
             <li>Split stacked annotations into standalone lines</li>
-            <li>Preserve a clean modifier order before declarations</li>
         </ul>
     ]]></description>
 

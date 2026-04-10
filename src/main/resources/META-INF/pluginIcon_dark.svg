@@ -1,0 +1,24 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="accent-dark" x1="7" y1="6" x2="33" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF62E0"/>
+      <stop offset="0.52" stop-color="#8D72FF"/>
+      <stop offset="1" stop-color="#36E8FF"/>
+    </linearGradient>
+    <radialGradient id="glow-dark" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(29.5 9.5) rotate(133.363) scale(18.5)">
+      <stop stop-color="#36E8FF" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#36E8FF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="40" height="40" rx="12" fill="#03050A"/>
+  <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="11.25" stroke="white" stroke-opacity="0.16"/>
+  <circle cx="29.5" cy="9.5" r="11" fill="url(#glow-dark)"/>
+  <path d="M25.5 2H38V14.5C33.4 13.7 28.1 9.5 25.5 2Z" fill="url(#accent-dark)"/>
+  <rect x="5.5" y="5.5" width="29" height="29" rx="10" fill="#0A1020"/>
+  <rect x="6" y="6" width="28" height="28" rx="9.5" stroke="white" stroke-opacity="0.08"/>
+  <text x="10.1" y="25.9" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="18.4" font-weight="700" letter-spacing="-0.5">@</text>
+  <rect x="22" y="13.8" width="8.2" height="2.6" rx="1.3" fill="#36E8FF"/>
+  <rect x="22" y="18.9" width="6.5" height="2.6" rx="1.3" fill="#8D72FF"/>
+  <rect x="22" y="24" width="10.4" height="2.6" rx="1.3" fill="#FF62E0"/>
+  <circle cx="31.3" cy="24.4" r="2.1" fill="#FFD24A"/>
+</svg>

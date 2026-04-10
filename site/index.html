@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotation Tidy</title>
+    <meta
+        name="description"
+        content="让注解布局回归秩序。Annotation Tidy 是一款为 IntelliJ IDEA 打造的插件，用更轻巧的方式，让 Java 注解更整洁、更从容。">
+    <link rel="icon" type="image/svg+xml" href="./assets/annotation-tidy-icon.svg">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a class="brand" href="#">
+                <img class="brand-logo" src="./assets/annotation-tidy-icon.svg" alt="Annotation Tidy icon">
+                <span>Annotation Tidy</span>
+            </a>
+            <nav class="site-nav">
+                <a href="#overview">概览</a>
+                <a href="#preview">效果</a>
+                <a href="#install">安装</a>
+            </nav>
+            <a class="button button-secondary" href="../build/distributions/annotation-tidy-0.1.0.zip">下载插件</a>
+        </header>
+
+        <main>
+            <section class="hero" id="overview">
+                <div class="hero-headline reveal">
+                    <p class="eyebrow">INTELLIJ IDEA PLUGIN</p>
+                    <h1>让注解布局回归秩序</h1>
+                </div>
+
+                <div class="hero-body">
+                    <div class="hero-copy reveal delay-1">
+                        <p class="hero-text">
+                            Annotation Tidy 不试图改变你的编码习惯，
+                            它只是把那些原本拥挤、堆叠、容易打断视线的注解前缀，
+                            整理成更清晰、更克制，也更耐看的样子。
+                        </p>
+                        <div class="hero-actions">
+                            <a class="button button-primary" href="../build/distributions/annotation-tidy-0.1.0.zip">下载插件</a>
+                            <a class="button button-tertiary" href="#preview">查看效果</a>
+                        </div>
+                        <p class="hero-footnote">适配 IntelliJ IDEA 2025.2。为那些真正在意代码观感的人而生。</p>
+                    </div>
+
+                    <div class="hero-frame reveal delay-1">
+                        <div class="product-shot">
+                            <div class="product-shot-top">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="product-shot-body">
+                                <div class="shot-pane">
+                                    <p class="shot-label">Before</p>
+                                    <pre class="code-block"><code>
+<span class="code-line"><span class="token-annotation">@SuppressWarnings</span><span class="token-punctuation">(</span><span class="token-string">"unchecked"</span><span class="token-punctuation">)</span> <span class="token-annotation">@Deprecated</span> <span class="token-annotation">@Override</span></span>
+<span class="code-line"><span class="token-keyword">public</span> <span class="token-type">String</span> <span class="token-function">value</span><span class="token-punctuation">()</span> <span class="token-punctuation">{</span></span>
+<span class="code-line">    <span class="token-keyword">return</span> <span class="token-string">""</span><span class="token-punctuation">;</span></span>
+<span class="code-line"><span class="token-punctuation">}</span></span></code></pre>
+                                </div>
+                                <div class="shot-arrow">→</div>
+                                <div class="shot-pane shot-pane-active">
+                                    <p class="shot-label">After</p>
+                                    <pre class="code-block"><code>
+<span class="code-line"><span class="token-annotation">@Override</span></span>
+<span class="code-line"><span class="token-annotation">@Deprecated</span></span>
+<span class="code-line"><span class="token-annotation">@SuppressWarnings</span><span class="token-punctuation">(</span><span class="token-string">"unchecked"</span><span class="token-punctuation">)</span></span>
+<span class="code-line"><span class="token-keyword">public</span> <span class="token-type">String</span> <span class="token-function">value</span><span class="token-punctuation">()</span> <span class="token-punctuation">{</span></span>
+<span class="code-line">    <span class="token-keyword">return</span> <span class="token-string">""</span><span class="token-punctuation">;</span></span>
+<span class="code-line"><span class="token-punctuation">}</span></span></code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="statement reveal">
+                <p>
+                    写 Java 时，注解往往并没有错。
+                    只是当排布失衡，整段代码也会随之显得仓促。
+                </p>
+            </section>
+
+            <section class="feature-band reveal delay-1">
+                <article class="feature-band-card">
+                    <p class="eyebrow">WHY IT MATTERS</p>
+                    <h2>它带来的不是复杂功能，而是一种更从容的观感</h2>
+                    <p>
+                        它做的事情很轻，结果却足够直接。
+                        注解之间更有层次，声明前缀更有呼吸感，
+                        代码也因此显得更被认真对待。
+                    </p>
+                </article>
+                <article class="feature-list">
+                    <div>
+                        <strong>更从容</strong>
+                        <span>减少拥挤与堆叠，让视线停留在真正重要的地方。</span>
+                    </div>
+                    <div>
+                        <strong>更轻巧</strong>
+                        <span>不需要额外学习成本，一个动作就能完成整理。</span>
+                    </div>
+                    <div>
+                        <strong>更耐看</strong>
+                        <span>让注解块回归统一，日常阅读与维护都会更舒服。</span>
+                    </div>
+                </article>
+            </section>
+
+            <section class="preview-grid reveal" id="preview">
+                <article class="preview-panel preview-panel-dark">
+                    <p class="eyebrow">VISUAL DIFFERENCE</p>
+                    <h2>变化并不喧哗，却很难忽视</h2>
+                    <pre class="code-block"><code>
+<span class="code-line"><span class="token-keyword">class</span> <span class="token-type">Demo</span> <span class="token-punctuation">{</span></span>
+<span class="code-line is-empty"></span>
+<span class="code-line">    <span class="token-annotation">@Transactional</span> <span class="token-annotation">@Nullable</span></span>
+<span class="code-line">    <span class="token-annotation">@SuppressWarnings</span><span class="token-punctuation">(</span><span class="token-string">"rawtypes"</span><span class="token-punctuation">)</span></span>
+<span class="code-line">    <span class="token-keyword">public</span> <span class="token-type">String</span> <span class="token-function">load</span><span class="token-punctuation">()</span> <span class="token-punctuation">{</span></span>
+<span class="code-line">        <span class="token-keyword">return</span> <span class="token-string">"ok"</span><span class="token-punctuation">;</span></span>
+<span class="code-line">    <span class="token-punctuation">}</span></span>
+<span class="code-line is-empty"></span>
+<span class="code-line"><span class="token-punctuation">}</span></span></code></pre>
+                </article>
+                <article class="preview-panel">
+                    <p class="eyebrow">AFTER TIDYING</p>
+                    <h2>更像一段被认真维护过的代码</h2>
+                    <pre class="code-block"><code>
+<span class="code-line"><span class="token-keyword">class</span> <span class="token-type">Demo</span> <span class="token-punctuation">{</span></span>
+<span class="code-line is-empty"></span>
+<span class="code-line">    <span class="token-annotation">@Nullable</span></span>
+<span class="code-line">    <span class="token-annotation">@Transactional</span></span>
+<span class="code-line">    <span class="token-annotation">@SuppressWarnings</span><span class="token-punctuation">(</span><span class="token-string">"rawtypes"</span><span class="token-punctuation">)</span></span>
+<span class="code-line">    <span class="token-keyword">public</span> <span class="token-type">String</span> <span class="token-function">load</span><span class="token-punctuation">()</span> <span class="token-punctuation">{</span></span>
+<span class="code-line">        <span class="token-keyword">return</span> <span class="token-string">"ok"</span><span class="token-punctuation">;</span></span>
+<span class="code-line">    <span class="token-punctuation">}</span></span>
+<span class="code-line is-empty"></span>
+<span class="code-line"><span class="token-punctuation">}</span></span></code></pre>
+                </article>
+            </section>
+
+            <section class="quote-block reveal delay-1">
+                <p>
+                    对很多人来说，这并不只是格式化。
+                    它更像是让代码重新显得体面的那一步。
+                </p>
+            </section>
+
+            <section class="install-section reveal" id="install">
+                <div class="install-copy">
+                    <p class="eyebrow">INSTALL</p>
+                    <h2>装上它，把整理注解这件小事，交给一个更顺手的动作。</h2>
+                    <p>
+                        在 IntelliJ IDEA 中选择
+                        <span class="inline-code">Install Plugin from Disk...</span>，
+                        导入 ZIP 后即可开始使用。
+                    </p>
+                </div>
+                <div class="install-card">
+                    <div class="install-step">
+                        <span>01</span>
+                        <p>下载插件 ZIP</p>
+                    </div>
+                    <div class="install-step">
+                        <span>02</span>
+                        <p>在 IDEA 中从本地安装</p>
+                    </div>
+                    <div class="install-step">
+                        <span>03</span>
+                        <p>用快捷键开始整理</p>
+                    </div>
+                    <a class="button button-primary button-block" href="../build/distributions/annotation-tidy-0.1.0.zip">下载适用于 IDEA 2025.2 的版本</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer reveal">
+            <p>&copy; 2026 Annotation Tidy. 保留所有权利。</p>
+            <p>IntelliJ IDEA 与 JetBrains 相关名称仅用于说明兼容性，本产品页与 JetBrains 无官方从属关系。</p>
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

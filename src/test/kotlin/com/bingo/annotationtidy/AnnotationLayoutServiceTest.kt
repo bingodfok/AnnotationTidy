@@ -32,4 +32,33 @@ class AnnotationLayoutServiceTest : BasePlatformTestCase() {
             """.trimIndent(),
         )
     }
+
+    fun testFieldAnnotationsAreSplitAndSorted() {
+        val file = myFixture.configureByText(
+            "Demo.java",
+            """
+            class Demo {
+                @SuppressWarnings("rawtypes") @Deprecated @A private String value;
+            }
+
+            @interface A {}
+            """.trimIndent(),
+        )
+
+        val changed = AnnotationLayoutService.tidyJavaFile(file as com.intellij.psi.PsiJavaFile)
+
+        assertEquals(1, changed)
+        myFixture.checkResult(
+            """
+            class Demo {
+                @A
+                @Deprecated
+                @SuppressWarnings("rawtypes")
+                private String value;
+            }
+
+            @interface A {}
+            """.trimIndent(),
+        )
+    }
 }

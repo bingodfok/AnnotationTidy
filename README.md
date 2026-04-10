@@ -1,6 +1,6 @@
 # Annotation Tidy
 
-`Annotation Tidy` is an IntelliJ IDEA plugin for quickly tidying annotations on Java classes and methods.
+`Annotation Tidy` is an IntelliJ IDEA plugin for quickly tidying annotations on Java classes, methods, and fields.
 
 ## MVP Scope
 
@@ -8,7 +8,7 @@
 - Reorders annotations on the same declaration by annotation text length, from shortest to longest
 - Splits stacked annotations into standalone lines
 - Keeps Java modifiers in a stable order after the annotation block
-- Targets class and method declarations only
+- Targets class, method, and field declarations
 
 ## Sorting Rules
 
@@ -48,5 +48,5 @@ gradle wrapper
 
 - Let users configure their own sorting rules
 - Provide an intention action for only the current method
-- Add support for field annotations if needed later
+- Fine-tune behavior for special framework annotations
 - Add project-wide batch tidy support
