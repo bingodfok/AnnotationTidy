@@ -1,4 +1,4 @@
-package com.bingo.annotationtidy
+package com.bingodfok.annotationtidy
 
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.util.TextRange

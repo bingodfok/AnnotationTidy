@@ -24,9 +24,9 @@ If two annotations have the same length, the plugin falls back to annotation nam
 
 ## Project Layout
 
-- `src/main/kotlin/com/bingo/annotationtidy/AnnotationLayoutService.kt`: core annotation tidy logic
-- `src/main/kotlin/com/bingo/annotationtidy/TidyJavaAnnotationsAction.kt`: IDE action entry point
-- `src/test/kotlin/com/bingo/annotationtidy/AnnotationLayoutServiceTest.kt`: basic behavior test
+- `src/main/kotlin/com/bingodfok/annotationtidy/AnnotationLayoutService.kt`: core annotation tidy logic
+- `src/main/kotlin/com/bingodfok/annotationtidy/TidyJavaAnnotationsAction.kt`: IDE action entry point
+- `src/test/kotlin/com/bingodfok/annotationtidy/AnnotationLayoutServiceTest.kt`: basic behavior test
 
 ## Local Run Notes
 

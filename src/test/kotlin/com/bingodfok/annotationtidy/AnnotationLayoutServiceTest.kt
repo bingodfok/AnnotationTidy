@@ -1,4 +1,4 @@
-package com.bingo.annotationtidy
+package com.bingodfok.annotationtidy
 
 import com.intellij.testFramework.fixtures.BasePlatformTestCase
 
