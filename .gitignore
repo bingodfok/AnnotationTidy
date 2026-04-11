@@ -11,6 +11,7 @@ out/
 # IntelliJ Platform plugin caches
 .intellijPlatform/
 .kotlin/
+site/downloads/*.zip
 
 # OS files
 .DS_Store
