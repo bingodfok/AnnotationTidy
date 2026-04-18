@@ -61,4 +61,38 @@ class AnnotationLayoutServiceTest : BasePlatformTestCase() {
             """.trimIndent(),
         )
     }
+
+    fun testTidyingAlsoOptimizesImportsAndReformatsCode() {
+        val file = myFixture.configureByText(
+            "Demo.java",
+            """
+            import java.util.List;
+            
+            class Demo{
+                @SuppressWarnings("unchecked") @A public String value(){
+                    return "";
+                }
+            }
+            
+            @interface A {}
+            """.trimIndent(),
+        )
+
+        val changed = AnnotationLayoutService.tidyJavaFile(file as com.intellij.psi.PsiJavaFile)
+
+        assertEquals(1, changed)
+        myFixture.checkResult(
+            """
+            class Demo {
+                @A
+                @SuppressWarnings("unchecked")
+                public String value() {
+                    return "";
+                }
+            }
+
+            @interface A {}
+            """.trimIndent(),
+        )
+    }
 }

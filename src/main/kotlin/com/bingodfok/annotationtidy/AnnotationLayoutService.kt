@@ -15,6 +15,7 @@ import com.intellij.psi.PsiModifierList
 import com.intellij.psi.PsiModifierListOwner
 import com.intellij.psi.PsiWhiteSpace
 import com.intellij.psi.codeStyle.CodeStyleManager
+import com.intellij.psi.codeStyle.JavaCodeStyleManager
 
 object AnnotationLayoutService {
 
@@ -36,7 +37,8 @@ object AnnotationLayoutService {
     )
 
     fun tidyJavaFile(file: PsiJavaFile): Int {
-        val document = PsiDocumentManager.getInstance(file.project).getDocument(file) ?: return 0
+        val documentManager = PsiDocumentManager.getInstance(file.project)
+        val document = documentManager.getDocument(file) ?: return 0
         val edits = collectEdits(file, document)
         if (edits.isEmpty()) {
             return 0
@@ -45,8 +47,15 @@ object AnnotationLayoutService {
         edits.sortedByDescending { it.range.startOffset }
             .forEach { edit -> document.replaceString(edit.range.startOffset, edit.range.endOffset, edit.replacement) }
 
-        PsiDocumentManager.getInstance(file.project).commitDocument(document)
-        CodeStyleManager.getInstance(file.project).reformat(file)
+        documentManager.commitDocument(document)
+        documentManager.doPostponedOperationsAndUnblockDocument(document)
+
+        if (AnnotationTidySettings.getInstance().reformatCodeAfterTidying) {
+            JavaCodeStyleManager.getInstance(file.project).optimizeImports(file)
+            CodeStyleManager.getInstance(file.project).reformat(file)
+        }
+
+        documentManager.commitAllDocuments()
         return edits.size
     }
 

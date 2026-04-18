@@ -31,6 +31,8 @@ class TidyJavaAnnotationsAction : AnAction() {
         val title = "Annotation Tidy"
         val content = if (changedCount == 0) {
             "当前文件没有需要整理的 Java 注解。"
+        } else if (AnnotationTidySettings.getInstance().reformatCodeAfterTidying) {
+            "已整理 $changedCount 处注解声明，并按当前代码风格完成代码整理。"
         } else {
             "已整理 $changedCount 处注解声明。"
         }

@@ -1,16 +1,37 @@
 <idea-plugin>
     <id>com.bingodfok.annotationtidy</id>
     <name>Annotation Tidy</name>
-    <vendor>bingodfok</vendor>
+    <vendor url="https://github.com/bingodfok/AnnotationTidy">bingodfok</vendor>
 
     <description><![CDATA[
-        <p>Quickly tidy Java annotations on classes, methods, and fields.</p>
+        <p>让 Java 注解块看起来更整洁，也更容易阅读。</p>
+        <p>
+            Annotation Tidy 会整理当前 Java 文件中的类、方法和字段注解，
+            把堆叠在同一行的注解拆成独立行，并按注解文本长度从短到长重新排列。
+        </p>
         <ul>
-            <li>Trigger with a shortcut inside IntelliJ IDEA</li>
-            <li>Sort annotations from shortest to longest</li>
-            <li>Split stacked annotations into standalone lines</li>
+            <li>支持类、方法、字段上的 Java 注解</li>
+            <li>自动拆分堆叠注解，缓解声明前缀的拥挤感</li>
+            <li>按注解文本长度从短到长排序，观感更统一</li>
+            <li>保留修饰符顺序，减少整理后的突兀感</li>
+            <li>可选地在整理注解后同步整理代码并优化 imports</li>
+            <li>可通过菜单、右键或快捷键快速触发</li>
+            <li>快捷键和“是否整理代码”都可在 <code>Settings / Preferences -> Tools -> Annotation Tidy</code> 中调整</li>
         </ul>
+        <p>适合希望代码前缀更克制、更顺眼的 Java 开发者。</p>
     ]]></description>
+
+    <change-notes><![CDATA[
+        <h3>0.1.0</h3>
+        <ul>
+            <li>新增对类、方法和字段注解的整理支持</li>
+            <li>支持将同一行堆叠注解拆分为独立行</li>
+            <li>按注解文本长度从短到长排序，提升整体观感</li>
+            <li>保留 Java 修饰符顺序，减少整理后的阅读跳跃</li>
+            <li>支持通过设置开关控制是否继续执行代码整理与 imports 优化</li>
+            <li>新增菜单图标，并补充插件设置入口与元数据说明</li>
+        </ul>
+    ]]></change-notes>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.java</depends>
@@ -20,12 +41,18 @@
                 id="Annotation Tidy"
                 displayType="BALLOON"
                 isLogByDefault="false"/>
+        <applicationConfigurable
+                parentId="tools"
+                id="annotation.tidy.settings"
+                displayName="Annotation Tidy"
+                instance="com.bingodfok.annotationtidy.AnnotationTidyConfigurable"/>
     </extensions>
 
     <actions>
         <action
                 id="AnnotationTidy.TidyJavaAnnotationsAction"
                 class="com.bingodfok.annotationtidy.TidyJavaAnnotationsAction"
+                icon="icons/annotationTidyAction.svg"
                 text="Tidy Java Annotations"
                 description="Reorder and normalize Java annotations in the current file">
             <add-to-group group-id="ToolsMenu" anchor="last"/>

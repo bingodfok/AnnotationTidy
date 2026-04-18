@@ -1,0 +1,16 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="annotation-tidy-action-accent" x1="3" y1="2.5" x2="13.2" y2="13.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF4FD8"/>
+      <stop offset="0.52" stop-color="#7A5CFF"/>
+      <stop offset="1" stop-color="#18DBFF"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="14" height="14" rx="4.2" fill="#0A0D15"/>
+  <rect x="1.35" y="1.35" width="13.3" height="13.3" rx="3.85" stroke="white" stroke-opacity="0.12" stroke-width="0.7"/>
+  <path d="M10.4 1.1H14.9V5.6C13.2 5.3 11.3 3.8 10.4 1.1Z" fill="url(#annotation-tidy-action-accent)"/>
+  <path d="M6.9 10.4C6.6 10.6 6.2 10.7 5.7 10.7C4.5 10.7 3.7 9.8 3.7 8.3C3.7 6.6 4.7 5.2 6.4 5.2C7.7 5.2 8.4 6 8.4 7.1V9.2C8.4 9.7 8.6 9.9 8.9 9.9C9.4 9.9 9.9 9.2 9.9 8C9.9 6.2 8.6 4.9 6.8 4.9C4.5 4.9 3 6.6 3 8.7C3 10.9 4.5 12.5 6.8 12.5C7.8 12.5 8.6 12.2 9.2 11.8L9.6 12.5C8.9 13 8 13.3 6.8 13.3C4.1 13.3 2 11.3 2 8.7C2 6 4.1 4 6.8 4C9.2 4 10.9 5.6 10.9 8C10.9 9.8 10 10.9 8.8 10.9C8.1 10.9 7.4 10.6 7.2 10L6.9 10.4ZM5.8 9.8C6.6 9.8 7.3 9 7.3 7.8C7.3 7 6.9 6.3 6.1 6.3C5.2 6.3 4.7 7.2 4.7 8.2C4.7 9.2 5.1 9.8 5.8 9.8Z" fill="#F8FBFF"/>
+  <rect x="10" y="6.2" width="2.3" height="1.05" rx="0.52" fill="#18DBFF"/>
+  <rect x="10" y="8.15" width="1.85" height="1.05" rx="0.52" fill="#7A5CFF"/>
+  <rect x="10" y="10.1" width="2.9" height="1.05" rx="0.52" fill="#FF4FD8"/>
+</svg>
